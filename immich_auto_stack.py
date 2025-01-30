@@ -149,7 +149,7 @@ class Immich():
     session.mount('http://', adapter)
     session.mount('https://', adapter)
 
-    response = session.put(f"{self.api_url}/stacks", headers=self.headers, json=payload)
+    response = session.post(f"{self.api_url}/stacks", headers=self.headers, json=payload)
 
     if response.ok:
       logger.info("  ðﾟﾟﾢ Success!")
