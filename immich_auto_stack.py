@@ -241,7 +241,7 @@ def main():
       logger.info(f'   Child name:  {child["originalFileName"]} ID: {child["id"]}')
     if len(children_id) > 0:
       payload = {
-        "assetIds": all_ids,
+        "assetIds": children_id,
       }
 
       if not dry_run:
