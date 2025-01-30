@@ -234,19 +234,16 @@ def main():
 
     logger.info(f'{i}/{len(stacks)} Key: {key}')
     logger.info(f'   Parent name: {stack[0]["originalFileName"]} ID: {parent_id}')
-    all_ids = []
-    ''.join(parent_id)
-    all_ids.extend(parent_id)
-    all_ids.extend(children_id)
+    
     for child in stack[1:]:
       logger.info(f'   Child name:  {child["originalFileName"]} ID: {child["id"]}')
-
+    all_ids = [x['id'] for x in stack[0:] if x['stackCount'] == None ]
     for child in all_ids[0:]:
       logger.info(f'   id:  {child}')
     
-    if len(children_id) > 0:
+    if len(all_ids) > 0:
       payload = {
-        "assetIds": children_id,
+        "assetIds": all_ids,
       }
 
       if not dry_run:
