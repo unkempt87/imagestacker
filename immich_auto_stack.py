@@ -237,7 +237,7 @@ def main():
     
     for child in stack[1:]:
       logger.info(f'   Child name:  {child["originalFileName"]} ID: {child["id"]}')
-    all_ids = [x['id'] for x in stack[0:] if x['stackCount'] == None ]
+    all_ids = [x['id'] for x in stack[0:]]
     for child in all_ids[0:]:
       logger.info(f'   id:  {child}')
     
