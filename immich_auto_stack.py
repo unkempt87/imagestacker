@@ -240,7 +240,7 @@ def main():
 
     if len(children_id) > 0:
       payload = {
-        "assetIds": parent_id + "," + children_id ,
+        "assetIds": parent_id + children_id ,
       }
 
       if not dry_run:
