@@ -237,10 +237,11 @@ def main():
     
     for child in stack[1:]:
       logger.info(f'   Child name:  {child["originalFileName"]} ID: {child["id"]}')
-
+    all_ids = []
+    all_ids = parent_id + children_id
     if len(children_id) > 0:
       payload = {
-        "assetIds": parent_id + children_id,
+        "assetIds": all_ids,
       }
 
       if not dry_run:
