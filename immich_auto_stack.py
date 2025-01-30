@@ -235,12 +235,13 @@ def main():
     logger.info(f'{i}/{len(stacks)} Key: {key}')
     logger.info(f'   Parent name: {stack[0]["originalFileName"]} ID: {parent_id}')
     all_ids = []
-    all_ids.extend(stack[0]['id'])
+    ''.join(parent_id)
+    all_ids.extend(parent_id)
     all_ids.extend(children_id)
     for child in stack[1:]:
       logger.info(f'   Child name:  {child["originalFileName"]} ID: {child["id"]}')
 
-    for child in all_ids[1:]:
+    for child in all_ids[0:]:
       logger.info(f'   id:  {child}')
     
     if len(children_id) > 0:
